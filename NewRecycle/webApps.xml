@@ -1,0 +1,12 @@
+﻿<WebApps>
+  <Customer Name="Customer UAT NEVADA">
+    <WebApplication>publishapp</WebApplication>
+    <WebApplication>App Pool 2</WebApplication>
+    <WebApplication>App Pool 3</WebApplication>
+    <WebApplication>App Pool 4</WebApplication>
+  </Customer>
+  <Customer Name="Customer B">
+    <WebApplication>App Pool 5</WebApplication>
+    <WebApplication>App Pool 6</WebApplication>
+  </Customer>
+</WebApps>
