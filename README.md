@@ -1,4 +1,4 @@
-# NewRecycle
+# IIS Pool Recycles
 
 This web application, allows you to recycle your IIS application pools remotely from the web. It uses a NuGet package called "Microsoft.Web.Administration"
 you can find more information about that package here:
