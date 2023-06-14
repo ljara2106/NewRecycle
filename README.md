@@ -12,3 +12,6 @@ Instructions:
    - create an empty 'log' folder in root. (it creates a log file and log IP of who clicks on the recycle button.)
    - make sure to password protect this web page so random people dont get access to recycle your applications.
 
+Note:
+   - The code allows you to do multiple application pool recycles at once, When clicking on the dropdown that says "Customer x", it will recycle the child apps specified in the webapps.xml.
+
