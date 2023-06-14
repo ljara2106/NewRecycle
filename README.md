@@ -6,7 +6,7 @@ you can find more information about that package here:
 and here:
 https://www.nuget.org/packages/Microsoft.Web.Administration/
 
-Instruction:
+Instructions:
    - Create an app pool, assign this application identity to a user with administrative privileges.
    - Add your application pool names in the .xml file called "webapps.xml" make sure it matches correctly.
    - create an empty 'log' folder in root. (it creates a log file and log IP of who clicks on the recycle button.)
