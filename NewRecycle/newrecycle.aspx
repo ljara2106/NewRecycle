@@ -104,7 +104,7 @@
         }
         
         .logo img {
-            max-width: 10%;
+            max-width: 30%;
             height: auto;
         }
 
@@ -148,7 +148,7 @@
     <form id="form1" runat="server">
 
         <div class="logo">
-            <img src="IIS_logo.png" alt="IIS Logo" />
+            <a href="newrecycle.aspx"><img src="IIS_logo.png" alt="IIS Logo" /></a>
         </div>
 
         <h1>Recycle IIS Web Applications</h1>
@@ -158,7 +158,10 @@
             <div class="animation-container" id="animationContainer">
                 <div class="animation-text">Processing...</div>
             </div>
-            <asp:DropDownList ID="webAppList" runat="server" CssClass="form-control"></asp:DropDownList>
+            <asp:DropDownList ID="webAppList" runat="server" CssClass="form-control" >
+                <asp:ListItem Value="" Disabled Selected>Select an option</asp:ListItem>
+            </asp:DropDownList>
+            
             <asp:Button ID="recycleButton" runat="server" Text="Recycle" OnClick="RecycleButton_Click" CssClass="btn-primary" OnClientClick="showAnimation();" />
             <div id="message" runat="server"></div>
         </div>
