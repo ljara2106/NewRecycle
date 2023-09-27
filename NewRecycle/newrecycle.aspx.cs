@@ -67,6 +67,7 @@ namespace NewRecycle
                 message.InnerText = "Unable to create Logs folder.";
                 message.Style["color"] = "red";
             }
+ 
 
             // Write log entry to file
             File.AppendAllText(logFilePath, logEntry + Environment.NewLine);

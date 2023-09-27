@@ -1,17 +1,28 @@
 # IIS Pool Recycles
 
-This web application, allows you to recycle your IIS application pools remotely from the web. It uses a NuGet package called "Microsoft.Web.Administration"
-you can find more information about that package here:
-[Microsoft.Web.Administration](https://learn.microsoft.com/en-us/dotnet/api/microsoft.web.administration?view=iis-dotnet)
-and here:
-https://www.nuget.org/packages/Microsoft.Web.Administration/
+This web application allows you to remotely recycle your IIS application pools from the web. It leverages the "Microsoft.Web.Administration" NuGet package for interacting with IIS.
 
-Instructions:
-   - Create an app pool, assign this application identity to a user with administrative privileges.
-   - Add your application pool names in the .xml file called "webapps.xml" make sure it matches correctly.
-   - create an empty 'log' folder in root. (it creates a log file and log IP of who clicks on the recycle button.)
-   - make sure to password protect this web page so random people dont get access to recycle your applications.
+## About Microsoft.Web.Administration
 
-Note:
-   - The code allows you to do multiple application pool recycles at once, When clicking on the dropdown that says "Customer x", it will recycle the child apps specified in the webapps.xml.
+For more information about the "Microsoft.Web.Administration" package, you can refer to the official documentation:
+- [Microsoft.Web.Administration Documentation](https://learn.microsoft.com/en-us/dotnet/api/microsoft.web.administration?view=iis-dotnet)
+- [NuGet Package](https://www.nuget.org/packages/Microsoft.Web.Administration/)
+
+## Instructions
+
+To get started, follow these steps:
+
+1. **Create an Application Pool**: Create an IIS application pool for your web application and assign it an identity with administrative privileges.
+
+2. **Configure Web Application Names**: Add the names of the application pools you want to recycle in the `.xml` file named "webapps.xml". Ensure that the names match exactly.
+
+3. **Create Log Folder**: Create an empty folder named 'log' in the root directory of your application. This folder will be used to store log files that record the IP addresses of users who trigger application pool recycling.
+
+4. **Password Protect**: Ensure that your web page is password protected to prevent unauthorized access. This is essential to secure the ability to recycle your application pools.
+
+## Note
+
+- The provided code allows you to perform multiple application pool recycles simultaneously. When you click on the dropdown labeled "Customer x", it will initiate the recycling of the child applications specified in the "webapps.xml" file.
+
+Please make sure to follow security best practices and restrict access to this application to authorized personnel only.
 
