@@ -55,9 +55,12 @@ namespace NewRecycle
             if (!Directory.Exists(logFolder))
             {
                 //throw new DirectoryNotFoundException("Logs folder not found.");
-                message.InnerText = "Logs folder not found.";
-                message.Style["color"] = "red";
+                //message.InnerText = "Logs folder not found.";
+                //message.Style["color"] = "red";
+                //create folder in root called "Logs"
+                Directory.CreateDirectory(logFolder);
             }
+ 
 
             // Write log entry to file
             File.AppendAllText(logFilePath, logEntry + Environment.NewLine);
