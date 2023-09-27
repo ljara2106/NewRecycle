@@ -16,13 +16,11 @@ To get started, follow these steps:
 
 2. **Configure Web Application Names**: Add the names of the application pools you want to recycle in the `.xml` file named "webapps.xml". Ensure that the names match exactly.
 
-3. **Create Log Folder**: Create an empty folder named 'log' in the root directory of your application. This folder will be used to store log files that record the IP addresses of users who trigger application pool recycling.
-
-4. **Password Protect**: Ensure that your web page is password protected to prevent unauthorized access. This is essential to secure the ability to recycle your application pools.
+3. **Password Protect**: Ensure that your web page is password protected to prevent unauthorized access. This is essential to secure the ability to recycle your application pools.
 
 ## Note
 
-- The provided code allows you to perform multiple application pool recycles simultaneously. When you click on the dropdown labeled "Customer x", it will initiate the recycling of the child applications specified in the "webapps.xml" file.
+- The provided code allows you to perform multiple application pool recycles simultaneously. When you click on the dropdown labeled "Customer X", it will initiate the recycling of the child applications specified in the "webapps.xml" file.
 
 Please make sure to follow security best practices and restrict access to this application to authorized personnel only.
 
