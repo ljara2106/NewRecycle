@@ -26,7 +26,6 @@ namespace NewRecycle
                 LoadWebApps();
             }
 
-            // Apply bigger font and bold style to customer names in the dropdown handled by <Customer> tags in XML
             foreach (ListItem item in webAppList.Items)
             {
                 if (IsCustomerName(item.Text))
@@ -69,35 +68,8 @@ namespace NewRecycle
             }
  
 
-            // Write log entry to file
+            // log entry to file
             File.AppendAllText(logFilePath, logEntry + Environment.NewLine);
-
-
-            //using (ServerManager serverManager = new ServerManager())
-            //{
-            //    ApplicationPool appPool = serverManager.ApplicationPools.FirstOrDefault(pool => pool.Name == selectedWebApp);
-
-            //    if (appPool != null)
-            //    {
-            //        try
-            //        {
-            //            appPool.Recycle();
-            //            message.InnerText = "Application pool " +selectedWebApp+ " has been recycled successfully.";
-            //            message.Style["color"] = "green";
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            message.InnerText = "Failed to recycle the application pool. Reason: " + ex.Message;
-            //            message.Style["color"] = "red";
-            //        }
-            //    }
-            //    else
-            //    {
-            //        message.InnerText = "Selected application pool not found.";
-            //        message.Style["color"] = "red";
-            //    }
-            //}
-
 
             string selectedValue = webAppList.SelectedValue;
 
@@ -150,19 +122,7 @@ namespace NewRecycle
 
         private void LoadWebApps()
         {
-            //string xmlFile = Server.MapPath("~/webApps.xml");
-            //XDocument doc = XDocument.Load(xmlFile);
-            //var webApps = doc.Descendants("Name");
-
-            //foreach (var webApp in webApps)
-            //{
-            //    string webAppName = webApp.Value;
-            //    if (!string.IsNullOrEmpty(webAppName))
-            //    {
-            //        webAppList.Items.Add(new ListItem(webAppName));
-            //    }
-            //}
-
+ 
             string xmlFilePath = Server.MapPath("~/webApps.xml");
 
             // Load the XML document
@@ -172,7 +132,6 @@ namespace NewRecycle
             // Retrieve the customer data from the XML
             XmlNodeList customerNodes = xmlDoc.SelectNodes("//Customer");
 
-            // Loop through each customer node and retrieve the customer name
             foreach (XmlNode customerNode in customerNodes)
             {
                 string customerName = customerNode.Attributes["Name"].Value;
@@ -193,20 +152,11 @@ namespace NewRecycle
                 }
             }
 
-
-
-
-
-
         }
 
 
         private bool IsCustomerName(string value)
         {
-            // Implement your logic to determine if the value represents a customer name
-            // For example, you can check if the value exists in the XML under the 'Name' attribute of 'Customer' nodes
-            // Return true if it represents a customer name, false otherwise
-            // Replace this placeholder implementation with your actual logic
             return value.StartsWith("Customer");
         }
 
@@ -243,7 +193,6 @@ namespace NewRecycle
                 return true;
             }
 
-            // Customer not found in the XML
             return false;
         }
 
@@ -263,12 +212,9 @@ namespace NewRecycle
             }
             catch (Exception ex)
             {
-                // Log or handle the exception as needed
-                // Display error message on the front end or log the error
                 message.InnerText = "Error occurred while recycling the application pool: " + ex.Message;
             }
 
-            // Application pool not found or error occurred
             return false;
         }
 
@@ -294,12 +240,9 @@ namespace NewRecycle
             }
             catch (Exception ex)
             {
-                // Log or handle the exception as needed
-                // Display error message on the front end or log the error
                 message.InnerText = "Error occurred while recycling the application pool: " + ex.Message;
             }
 
-            // Error occurred
             return false;
         }
 
@@ -322,10 +265,6 @@ namespace NewRecycle
 
             return userIPAddress;
         }
-
-
-
-
 
     }
 }
